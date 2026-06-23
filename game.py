@@ -10,18 +10,19 @@ selection_choice = {'камень':{'ножницы':True,'бумага':False},
 
 
 class ScoreBoard:
+    """Класс для сохранения результатов игры
+    gamer - игрок
+    board - сохраненые результаты"""
 
     def __init__(self, gamer):
         self.file_scores = 'scores.json' 
         self.gamer = gamer
-        self.number_of_movies = 0
         self.board = {self.gamer:0, 'Компьютер':0}
     
     def show_score(self):
         return f'Результат игры {self.gamer} - {self.board[self.gamer]} компьютер - {self.board["Компьютер"]}'  
 
     def add_point(self, winner):
-
         self.board[winner] += 1 
 
     def save_score(self):
@@ -31,6 +32,7 @@ class ScoreBoard:
         
 
 def game():
+    """Логика игры с выбором и сохранением результата"""
 
     print('Игра "Камень, ножницы, бумага"\n' \
           '               Правила игры\n'
