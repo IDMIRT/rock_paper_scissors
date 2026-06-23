@@ -11,7 +11,7 @@ selection_choice = {'камень':{'ножницы':True,'бумага':False},
 
 class ScoreBoard:
 
-    def __init__(self, gamer = None):
+    def __init__(self, gamer):
         self.file_scores = 'scores.json' 
         self.gamer = gamer
         self.number_of_movies = 0
