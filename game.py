@@ -13,10 +13,7 @@ class ScoreBoard:
 
     def __init__(self, gamer = None):
         self.file_scores = 'scores.json' 
-        if gamer == None:
-            self.gamer = 'Аноним'
-        else:
-            self.gamer = gamer
+        self.gamer = gamer
         self.number_of_movies = 0
         self.board = {self.gamer:0, 'Компьютер':0}
     
@@ -42,7 +39,7 @@ def game():
           'по результам выигравшей стороне засчитывается очко')
     
     gamer = input('Введите ваше имя: ')
-    if gamer.strip == '':
+    if gamer.strip() == '':
         gamer = "Аноним"
 
     scores = ScoreBoard(gamer)
